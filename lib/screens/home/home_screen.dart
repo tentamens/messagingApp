@@ -8,10 +8,6 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey.shade900,
-      appBar: AppBar(
-        backgroundColor: Colors.black26,
-        title: const Text('Hello world', style: TextStyle(color: Colors.white)),
-      ),
       body: Column(children: [Expanded(child: ChatLists())]),
       floatingActionButton: FloatingActionButton.extended(
         backgroundColor: Colors.orange,

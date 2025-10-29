@@ -1,0 +1,53 @@
+import 'package:flutter/material.dart';
+
+class ChatTextField extends StatelessWidget {
+  final TextEditingController textController;
+
+  final VoidCallback onSend;
+
+  const ChatTextField({
+    super.key,
+    required this.textController,
+    required this.onSend,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.grey.shade800,
+      child: Row(
+        children: [
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+              child: TextField(
+                controller: textController,
+                style: TextStyle(color: Colors.white),
+                maxLines: null,
+                decoration: const InputDecoration(
+                  hintText: 'Enter Message',
+                  hintStyle: TextStyle(color: Colors.grey),
+                  border: InputBorder.none,
+                  enabledBorder: InputBorder.none,
+                  focusedBorder: InputBorder.none,
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(right: 8),
+            child: IconButton.filled(
+              onPressed: onSend,
+              icon: Icon(Icons.send_rounded),
+              style: ButtonStyle(
+                backgroundColor: WidgetStateProperty.all<Color>(
+                  Colors.blue.shade700,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
