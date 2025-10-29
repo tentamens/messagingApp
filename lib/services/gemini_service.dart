@@ -32,4 +32,8 @@ class GeminiService {
 
     chat = model.startChat();
   }
+
+  void setup() {
+    intializeSession(SelectedModel.andrew);
+  }
 }

@@ -17,17 +17,19 @@ class ChatThreadComponent extends StatelessWidget {
               ? MainAxisAlignment.start
               : MainAxisAlignment.end,
           children: [
-            Card(
-              margin: EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-              color: Colors.grey.shade700,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 6,
-                ),
-                child: Text(
-                  chatMessages.reversed.toList()[index].message,
-                  style: TextStyle(color: Colors.white),
+            Flexible(
+              child: Card(
+                margin: EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                color: Colors.grey.shade700,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 6,
+                  ),
+                  child: Text(
+                    chatMessages.reversed.toList()[index].message,
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ),
             ),
